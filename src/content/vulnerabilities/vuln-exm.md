@@ -3,7 +3,7 @@ title: 'Vuln test'
 description: 'vuln descreiption'
 pubDate: 'Sep 25 2023'
 heroImage: '/htb/keeper/placeholder.png'
-private: false
+private: true
 category: 'vulnerabilities'
 tags: []
 ---
