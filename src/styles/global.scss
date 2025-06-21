@@ -1,0 +1,197 @@
+:root {
+  --text-color: 15, 18, 25;
+  --sub-text-color: 159, 151, 139;
+  --header-shadow: 15, 18, 25;
+  --links-color: #bb297c;
+  --links-color-dark: #79194f;
+  --box-shadow: 0 2px 6px rgba(var(--sub-text-color), 25%),
+    0 8px 24px rgba(var(--sub-text-color), 33%),
+    0 16px 32px rgba(var(--sub-text-color), 33%);
+  --code-bg: 229, 233, 240;
+}
+
+.dark {
+  --box-shadow-color: 85, 17, 55;
+
+  --text-color: 228, 224, 218;
+  --header-shadow: 15, 18, 25;
+  --box-shadow: 0 2px 6px rgba(var(--box-shadow-color), 25%),
+    0 8px 24px rgba(var(--box-shadow-color), 33%),
+    0 16px 32px rgba(var(--box-shadow-color), 33%);
+  --code-bg: 102, 102, 102;
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  src: url('/fonts/atkinson-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  src: url('/fonts/atkinson-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: audiowide;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Audiowide-Regular.woff') format('woff');
+}
+
+body {
+  font-family: 'Atkinson', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+main {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 3em 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem 0;
+  color: rgb(var(--text-color));
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+a {
+  color: var(--links-color);
+}
+
+a:hover {
+  color: var(--links-color);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.prose p {
+  margin-bottom: 2em;
+}
+
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
+
+input {
+  font-size: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+code {
+  padding: 2px 5px;
+  background-color: rgb(var(--code-bg));
+  border-radius: 2px;
+}
+
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+}
+
+pre > code {
+  all: unset;
+}
+
+blockquote {
+  border-left: 4px solid var(--links-color);
+  padding: 0 0 0 20px;
+  margin: 0px;
+  font-size: 1.333em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgb(var(--code-bg));
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+  main {
+    padding: 1em;
+  }
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}
+
+html.dark {
+  background-color: #181a1b;
+  color: rgb(228, 224, 218);
+}
+
+.dark .nav-links a {
+  color: rgb(228, 224, 218);
+}

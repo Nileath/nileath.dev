@@ -1,0 +1,48 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BaseHead from '../components/BaseHead.astro';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+
+    <script>
+      const setDarkMode = () => {
+        const theme = (() => {
+          if (
+            typeof localStorage !== 'undefined' &&
+            localStorage.getItem('theme')
+          ) {
+            return localStorage.getItem('theme');
+          }
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+          }
+          return 'light';
+        })();
+
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+
+        window.localStorage.setItem('theme', theme || 'light');
+      };
+
+      setDarkMode();
+      document.addEventListener('astro:after-swap', setDarkMode);
+      document.addEventListener('astro:page-load', setDarkMode, { once: true });
+    </script>
+  </body>
+</html>

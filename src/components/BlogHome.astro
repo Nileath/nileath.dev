@@ -1,0 +1,49 @@
+---
+import Blog from "../layouts/Blog.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const { collection } = Astro.props;
+let posts: CollectionEntry<"vulnerabilities" | "writeups">[] = [];
+
+console.log("Collection:", collection);
+
+if (collection === "all") {
+  const machinePosts = await getCollection("writeups");
+  const vulnerabilities = await getCollection("vulnerabilities");
+
+  posts = [...machinePosts, ...vulnerabilities];
+} else {
+  posts = await getCollection(collection);
+}
+
+posts = posts
+  .filter((post) => !post.data.private)
+  .filter(
+    (item, index, self) => index === self.findIndex((t) => t.id === item.id),
+  )
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Blog title="Nileath blog" description="Home page blog Nileat">
+  <main>
+    <section>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/${post.data.category}/${post.id}/`}>
+                <img
+                  width={720}
+                  height={360}
+                  src={post.data.heroImage}
+                  alt=""
+                />
+                <h4 class="title">{post.data.title}</h4>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Blog>
