@@ -1,11 +1,6 @@
 ---
-import Blog from '@/layouts/Blog.astro';
-
-return Astro.redirect('/blog');
+import BlogHome from '@/components/BlogHome.astro';
+import '@/styles/blogHome.scss';
 ---
 
-<Blog title="Nileath blog" description="Home page blog Nileat">
-		<main>
-			<h1>Hello!</h1>
-		</main>
-</Blog>
+<BlogHome collection="all" />
