@@ -5,8 +5,6 @@ import { getCollection, type CollectionEntry } from "astro:content";
 const { collection } = Astro.props;
 let posts: CollectionEntry<"vulnerabilities" | "writeups">[] = [];
 
-console.log("Collection:", collection);
-
 if (collection === "all") {
   const machinePosts = await getCollection("writeups");
   const vulnerabilities = await getCollection("vulnerabilities");

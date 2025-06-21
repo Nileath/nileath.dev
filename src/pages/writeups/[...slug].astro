@@ -15,8 +15,6 @@ type Props = CollectionEntry<'writeups'>;
 
 const post = Astro.props;
 
-console.log("POST", post);
-
 const { Content } = await render(post);
 ---
 
