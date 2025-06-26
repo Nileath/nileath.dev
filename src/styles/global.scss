@@ -167,6 +167,13 @@ hr {
   main {
     padding: 1em;
   }
+  header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  flex-direction: column;
+}
 }
 
 .sr-only {
