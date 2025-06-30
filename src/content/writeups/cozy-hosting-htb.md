@@ -1,7 +1,8 @@
 ---
 title: 'Cozy Hosting'
-description: 'WriteUp de la máquina Cozy Hosting'
+description: 'Write-Up de la máquina Cozy Hosting de HackTheBox'
 pubDate: 'Sep 09 2023'
+image: '/htb/cozy_hosting/placeholder.png'
 heroImage: '/htb/cozy_hosting/placeholder.png'
 private: false
 category: 'writeups'
