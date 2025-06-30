@@ -8,7 +8,7 @@ type Props = CollectionEntry<'blog' | 'writeups' | 'vulnerabilities'>['data'];
 const { title, description, heroImage } = Astro.props;
 ---
 
-<Blog title={title} description={description}>
+<Blog title={title} description={description} heroImage={heroImage}>
   <main>
     <article>
       <div class="back-button">
