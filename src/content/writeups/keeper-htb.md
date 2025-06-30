@@ -1,7 +1,8 @@
 ---
 title: 'Keeper'
-description: 'WriteUp de la máquina Keeper'
+description: 'Write-Up de la máquina Keeper de HackTheBox'
 pubDate: 'Sep 25 2023'
+image: '/htb/keeper/placeholder.png'
 heroImage: '/htb/keeper/placeholder.png'
 private: false
 category: 'writeups'

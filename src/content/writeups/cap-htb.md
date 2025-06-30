@@ -1,7 +1,8 @@
 ---
 title: 'Cap'
-description: 'WriteUp de la máquina Cap'
+description: 'Write-Up de la máquina Cap de HackTheBox'
 pubDate: 'Jun 26 2025'
+image: '/htb/cap/placeholder.png'
 heroImage: '/htb/cap/placeholder.png'
 private: false
 category: 'writeups'
